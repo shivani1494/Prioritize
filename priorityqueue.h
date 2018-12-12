@@ -20,6 +20,7 @@ struct pqNode {
 
 //you can at most have 1000 tasks at a given point in time
 //TODO - use vectors/lists of dynamically increase size of arrays
+//TODO- add destructor if you allocate space for the array
 
 class prioriyQueue {
 
@@ -29,20 +30,19 @@ class prioriyQueue {
         int front;
         int rear;
         int size;
-        pqNode* pqArray;
-        
+        pqNode* pqArray[100];
 
     public:
         prioriyQueue();
         pqNode* extractMax();
         void swap(pqNode *x, pqNode *y);
         void insert(string taskName, string taskDetails, int pri);
-        void heapify();
+        void heapify(int curr);
         pqNode* findPQNode(int taskNum);
         void printAllPQNodes();
         int parent(int n);
-        int leftChild(int n);
-        int rightChild(int n);
+        int left(int n);
+        int right(int n);
 };
 
 #endif

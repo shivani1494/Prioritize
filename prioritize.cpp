@@ -4,8 +4,6 @@
 #include <iostream>
 #include <array>
 #include <string>
-#include "graph.cpp"
-#include "priorityqueue.cpp"
 
 using namespace std;
 
